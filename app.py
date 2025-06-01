@@ -186,7 +186,7 @@ def show_instructions():
         ### 📁 CSVを選ぶ
 
         1. 「CSVを選択」ボタンをクリック  
-        2. Pocket公式サイトなどからエクスポートしたCSVを選ぶ  
+        2. [Pocket公式サイト](https://getpocket.com/export)からエクスポートしたCSVを選ぶ  
            → 表のプレビューと行数が表示されます
 
         ---
@@ -254,7 +254,7 @@ if property_names:
     cols = st.columns(5)
     with cols[0]:
         choice_title = st.selectbox(
-            "Pocketのtitle」",
+            "Pocketの「title」",
             options=["― 未選択 ―"] + property_names,
             key="map_title"
         )
