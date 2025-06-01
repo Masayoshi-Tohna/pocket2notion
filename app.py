@@ -4,7 +4,7 @@ import asyncio
 from playwright.async_api import async_playwright
 from notion_client import Client
 from datetime import datetime, timezone
-from bs4 import BeautifulSoup # ★★★ BeautifulSoupをインポート ★★★
+from bs4 import BeautifulSoup 
 
 # ----- Playwright でページ情報（ステータス/タイトル/全文）を取得する非同期関数（修正・ログ追加版） -----
 async def fetch_page_info(url: str):
@@ -213,8 +213,6 @@ def split_text_to_paragraph_blocks(text: str) -> list:
         print(f"    [Splitter Final Check - Block {i+1}] Content length: {final_content_len}")
         if final_content_len > max_chunk_len_api:
             print(f"    [Splitter Final Check - Block {i+1}] FATAL ERROR: CONTENT STILL TOO LONG ({final_content_len}) BEFORE RETURNING LIST!")
-            # ここでエラーが発生する場合、この関数内のロジックに根本的な欠陥がある
-            # もしくは、appendした後にchunkが何らかの形で変更されている（Pythonでは通常考えにくい）
 
     return children
 
