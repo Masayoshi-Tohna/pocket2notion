@@ -254,7 +254,7 @@ if property_names:
     cols = st.columns(5)
     with cols[0]:
         choice_title = st.selectbox(
-            "CSV の「title」→ Notion プロパティ選択",
+            "CSV の「title」",
             options=["― 未選択 ―"] + property_names,
             key="map_title"
         )
@@ -262,7 +262,7 @@ if property_names:
 
     with cols[1]:
         choice_url = st.selectbox(
-            "CSV の「url」→ Notion プロパティ選択",
+            "CSV の「url」",
             options=["― 未選択 ―"] + property_names,
             key="map_url"
         )
@@ -270,7 +270,7 @@ if property_names:
 
     with cols[2]:
         choice_time = st.selectbox(
-            "CSV の「time_added」→ Notion プロパティ選択",
+            "CSV の「time_added」",
             options=["― 未選択 ―"] + property_names,
             key="map_time"
         )
@@ -278,7 +278,7 @@ if property_names:
 
     with cols[3]:
         choice_tags = st.selectbox(
-            "CSV の「tags」→ Notion プロパティ選択",
+            "CSV の「tags」",
             options=["― 未選択 ―"] + property_names,
             key="map_tags"
         )
@@ -286,7 +286,7 @@ if property_names:
 
     with cols[4]:
         choice_status = st.selectbox(
-            "CSV の「status」→ Notion プロパティ選択",
+            "CSV の「status」",
             options=["― 未選択 ―"] + property_names,
             key="map_status"
         )
