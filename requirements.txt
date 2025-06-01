@@ -2,3 +2,4 @@ streamlit
 notion-client
 pandas
 playwright
+beautifulSoup4
