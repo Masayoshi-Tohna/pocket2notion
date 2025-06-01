@@ -219,7 +219,7 @@ st.title("Pocket to Notion")
 st.sidebar.header("Notion 認証情報設定")
 notion_token = st.sidebar.text_input("Notion API キー", type="password")
 database_id  = st.sidebar.text_input("Notion データベース ID")
-register_body = st.sidebar.checkbox("本文（ページ全文）を Notion に登録する", value=True)
+register_body = st.sidebar.checkbox("本文を Notion に登録する", value=True)
 
 if st.sidebar.button("使い方を見る"):
     show_instructions()
