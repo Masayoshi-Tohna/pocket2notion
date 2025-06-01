@@ -80,17 +80,19 @@ def fetch_page_info_sync(url: str):
 
 # ----- 本文を 2000 文字ごとに分割して Paragraph ブロックへ変換する関数 -----
 def split_text_to_paragraph_blocks(text: str) -> list:
-    """
-    - 引数 text を 2000 文字ごとに区切り、
-    - Notion の paragraph ブロック形式に変換してリストで返す。
-    """
     max_length = 2000
     children = []
     start = 0
     text_length = len(text)
 
     while start < text_length:
+        # まず、2000文字まで切り取る
         chunk = text[start:start + max_length]
+        # もし取得した chunk の長さが 2000 を超える場合（まれに発生）、
+        # 強制的に先頭2000文字までに切り詰める
+        if len(chunk) > max_length:
+            chunk = chunk[:max_length]
+
         block = {
             "object": "block",
             "type": "paragraph",
@@ -98,9 +100,7 @@ def split_text_to_paragraph_blocks(text: str) -> list:
                 "rich_text": [
                     {
                         "type": "text",
-                        "text": {
-                            "content": chunk
-                        }
+                        "text": {"content": chunk}
                     }
                 ]
             }
